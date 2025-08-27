@@ -2,13 +2,14 @@ import sys
 from Resources_rc import resources_rc
 from PyQt5.QtWidgets import QApplication, QWidget, QLineEdit, QStackedWidget, QDialog, QMessageBox
 from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, pyqtSignal
 
 #import form form python
+from MessageBox_Anywhere.Empty_form import Ui_Form_Empty
 from Loading_screen.form_splash import Ui_Form_loading_screen
 from Form_Login.formLogin import Ui_Form_login
 from Form_Regist.formRegister import Ui_Form_Register
-#from Form_buat_SecurityQuestion.form_make_SQuestion import Ui_form_buat_scr_question
+from Form_buat_SecurityQuestion.form_make_SQuestion import Ui_form_buat_scr_question
 #from Form_Security_Question.formSecr_question import Ui_Form_Security_QuestionR
 #from Form_reset_pass.formRst_pw import Ui_form_resetPassword
 
@@ -18,7 +19,16 @@ from MessageBox_Anywhere.msgWith_btnOk import Ui_msgBox_ok
 from MessageBox_Anywhere.msgWith_btnYaTidak import Ui_msgBox_YaTdk 
 
 #import database db_solusiku
-from service.db import cek_username
+#from service.db import cek_username
+        
+#FORM KOSONG
+class empty_form(QWidget):
+    def __init__(self, stacked):
+        super().__init__()
+        self.ui = Ui_Form_Empty()
+        self.ui.setupUi(self)
+        self.stacked = stacked
+                
         
 #MessaageBox_without_btn
 class messageBox(QDialog):
@@ -51,7 +61,7 @@ class MainApp(QWidget):
         self.stacked = stacked
         
         #Splash_Show
-        QTimer.singleShot(4000, self.open_Login)
+        QTimer.singleShot(1000, self.open_Login)
     
     def open_Login(self):
         self.stacked.setCurrentIndex(1)
@@ -97,6 +107,8 @@ class formLogin(QWidget):
            
 #FORM REGISTER
 class formRegist(QWidget):
+    dataSent = pyqtSignal(str)
+    
     def __init__(self, stacked):
         super().__init__()
         self.ui = Ui_Form_Register()
@@ -137,61 +149,67 @@ class formRegist(QWidget):
         
     def register_akun(self):
         username = self.ui.txt_username.text().strip()
+        password = self.ui.txt_password.text().strip()
+        jenis_pertanyaan = self.ui.cmbBox_sec_qstion.currentText()
+        cek_cmb_box = self.ui.cmbBox_sec_qstion.currentIndex()
         
-        if len(username) < 3 or len(username) > 20:
-            QMessageBox.warning(self, "Peringatan", "Username harus 3–20 karakter!")
-            return
-        
-        if cek_username(username):
-            QMessageBox.warning(self, "Peringatan", "Username telah digunakan!")
-        else:
-            QMessageBox.information(self, "Informasi","Username tersedia")
-            
-                
-                
-                
-        """
-        elif len(username) < 3 and len(password) < 8:
+        if len(password) == 0 and len(username) == 0:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername hanya dapat memuat 3 - 20 karakter, serta Password hanya dapat memuat 8 - 16 karakter.")
-            msgBox.exec_()
+            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername dan Password anda masih kosong, silahkan isi username dan password anda!")
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.back_regist)
             return
-        elif len(username) > 20 and len(password) > 16:
+        elif len(password) == 0:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername hanya dapat memuat 3 - 20 karakter, serta Password hanya dapat memuat 8 - 16 karakter.")
-            msgBox.exec_()
+            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nPassword anda masih kosong, silahkan isi password anda!")
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.back_regist)
             return
-        elif len(username) > 20 and len(password) < 8:
+        elif len(username) == 0:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername hanya dapat memuat 3 - 20 karakter, serta Password hanya dapat memuat 8 - 16 karakter.")
-            msgBox.exec_()
+            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername anda masih kosong, silahkan isi username anda!")
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.back_regist)
             return
-        elif len(username) < 3 and len(password) > 16:
-            msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername hanya dapat memuat 3 - 20 karakter, serta Password hanya dapat memuat 8 - 16 karakter.")
-            msgBox.exec_()
-            return
-        elif len(username) > 20 or len(username) < 3:
+        elif len(username) < 3 or len(username) > 20:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
             msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername hanya dapat memuat 3 - 20 karakter.")
-            msgBox.exec_()
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.back_regist)
             return
-        elif len(password) > 16 or len(password) < 8:
+        elif len(password) < 8 or len(password) > 16:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
             msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nPassword hanya dapat memuat 8 - 16 karakter.")
-            msgBox.exec_()
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.back_regist)
             return
-        elif self.cekSec_question == 0:
+        elif cek_cmb_box == 0:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nAnda belum memilih pertanyaan keamanan.")
-            msgBox.exec_()
+            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nAnda belum memilih Security Question.")
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.back_regist)
             return
-        """
+        else:
+            self.dataSent.emit(jenis_pertanyaan)
+            self.stacked.setCurrentWidget(buat_sec_question)
+            self.stacked.setWindowTitle("SECURITY QUESTION")
+            self.stacked.setWindowIcon(QIcon(":/LogoAndWindowsIcon/Aset/LogoIconSolusiku-final.png"))
+            self.stacked.setStyleSheet("Background-color: #ebebea;")
+                
         
         
-            
-    #back_to_Login
-    def back_Login(self):
+    def stay_regist(self):
+        msgBox_YaTdk.close()
+        self.stacked.setCurrentIndex(2)
+    
+    def goto_login(self):
+        msgBox_YaTdk.close()
         self.ui.txt_username.setText("")
         self.ui.txt_password.setText("")
         self.ui.cmbBox_sec_qstion.setCurrentIndex(0)
@@ -200,73 +218,96 @@ class formRegist(QWidget):
         self.stacked.setWindowTitle("LOGIN")
         self.stacked.setWindowIcon(QIcon(":/LogoAndWindowsIcon/Aset/LogoIconSolusiku-final.png"))
         self.stacked.setStyleSheet("Background-color: #ebebea;")
+            
+    #back_to_Login
+    def back_Login(self):
+        msgBox_YaTdk.ui.LblKonten_isi.setText("Apakah kamu yakin ingin membatalkan proses register ?")
+        msgBox_YaTdk.ui.btnTidak.clicked.connect(self.stay_regist)
+        msgBox_YaTdk.ui.btnYa.clicked.connect(self.goto_login)
+        self.stacked.setCurrentIndex(3)
+        msgBox_YaTdk.show()
         
+    
+    def back_regist(self):
+        self.stacked.setCurrentIndex(2)    
         
-"""
+
 #FORM MENJAWAB SEQURITY QUESTION
 class formJawab_secQuestion(QWidget):
-    def __init__(self):
+    def __init__(self, stacked):
         super().__init__()
         self.ui = Ui_form_buat_scr_question()
         self.ui.setupUi(self)
-        self.windowRegst = formRegist()
-       
-        
-        if jenis_pertanyaan == "Makanan Favorit":
-            self.ui.txt_Quest.setText(pertanyaan1)
-        elif jenis_pertanyaan == "Hewan Pelihara":
-            self.ui.txt_Quest.setText(pertanyaan2)
-        elif jenis_pertanyaan == "Guru Favorit":
-            self.ui.txt_Quest.setText(pertanyaan3)
-        elif jenis_pertanyaan == "Cinta Pertama":
-            self.ui.txt_Quest.setText(pertanyaan4)
-        elif jenis_pertanyaan == "Hobi":
-            self.ui.txt_Quest.setText(pertanyaan5)
-        
-            
+        self.stacked = stacked
         self.ui.btn_back.clicked.connect(self.open_Regist)
-        
-        self.ui.btn_identify.clicked.connect(self.save_db_solusiku)
-        
-    #Simpan Username, Password, Jawaban, Jenis_Pertanyaan ke database  
-    def save_db_solusiku(self):
-        username = self.usn
-        password = self.psw
-        jenis_pertanyaan = self.jenis_pertanyaan
-        jwb_pertanyaan = self.ui.txt_answer.text()
-        
-        if len(jwb_pertanyaan) > 0 and len(jwb_pertanyaan) < 100:
-            insert_register(username, password, jenis_pertanyaan, jwb_pertanyaan)
-            msgBox_Ok.ui.LblKonten_isi.setText(f"Register Berhasil!\nSilahkan Login {username}!")
-            msgBox_Ok.rejected.connect(self.tutup_messageBox_andgo_to_Login)
-            msgBox_Ok.ui.btnOk.clicked.connect(self.tutup_messageBox_andgo_to_Login)
-            msgBox_Ok.exec_()
-        elif len(jwb_pertanyaan) == 0:
-            msgBox_Ok.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox_Ok.ui.LblKonten_isi.setText(f"Register Gagal!\nMohon masukkan jawaban kamu {username}!")
-            msgBox_Ok.ui.btnOk.clicked.connect(self.close_msgBox)
-            msgBox_Ok.exec_()
-            
-    def close_msgBox(self):
-        msgBox_Ok.hide()
+        self.ui.btn_identify.clicked.connect(self.goto_login_process)
     
     
-    def tutup_messageBox_andgo_to_Login(self):
-        self.windowRegst.ui.txt_username.setText("")
-        self.windowRegst.ui.txt_password.setText("")
-        self.windowRegst.ui.cmbBox_sec_qstion.setCurrentIndex(0)
-        self.windowRegst.ui.chk_show_pw.setChecked(False)
-        self.ui.txt_answer.setText("")
-        self.ui.txt_Quest.setText("")
-        msgBox_Ok.close()
-        self.stacke
+    def data_sending(self, data):
+        self.jen_prtny = data
         
-     #back_to_register   
+        if self.jen_prtny == "Makanan Favorit":
+            self.ui.txt_Quest.setText(pertanyaan1)
+        elif self.jen_prtny == "Hewan Pelihara":
+            self.ui.txt_Quest.setText(pertanyaan2)
+        elif self.jen_prtny == "Guru Favorit":
+            self.ui.txt_Quest.setText(pertanyaan3)
+        elif self.jen_prtny == "Cinta Pertama":
+            self.ui.txt_Quest.setText(pertanyaan4)
+        elif self.jen_prtny == "Hobi":
+            self.ui.txt_Quest.setText(pertanyaan5) 
+        
+    #back_to_register   
     def open_Regist(self):
-        self.hide()
-        self.windowRegst.show()
+        self.stacked.setCurrentIndex(2)
+        self.stacked.setWindowTitle("REGISTER")
     
+    #tetap di form security question
+    def backto_sec_question(self):
+        self.stacked.setCurrentIndex(4)
+    
+    #menuju form login
+    def back_sec_questions(self):
+        register.ui.txt_username.setText("")
+        self.stacked.setCurrentIndex(1)
+        self.stacked.setWindowTitle("LOGIN")
         
+    #menuju form login melalui button ok    
+    def back_sec_questions_btnOk(self):
+        #Reset segala komponen yang terdapat di form regist dan sec_question
+        register.ui.txt_username.setText("")
+        register.ui.txt_password.setText("")
+        register.ui.cmbBox_sec_qstion.setCurrentIndex(0)
+        register.ui.chk_show_pw.setChecked(False)
+        buat_sec_question.ui.txt_answer.setText("")
+        
+        #close messageBox show form Login
+        msgBox_ok.close()
+        self.stacked.setCurrentIndex(1)
+        self.stacked.setWindowTitle("LOGIN")
+        
+    #verifikasi untuk Open Login
+    def goto_login_process(self):
+        jwb_pertanyaan = self.ui.txt_answer.text().strip()
+        
+        if len(jwb_pertanyaan) == 0:
+            msgBox.ui.LblJenisMsg.setText("Peringatan!")
+            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nAnda belum menjawab security question.")
+            self.stacked.setCurrentIndex(3)
+            msgBox.show()
+            msgBox.rejected.connect(self.backto_sec_question)
+            return
+        else:
+            msgBox_ok.ui.LblJenisMsg.setText("Informasi!")
+            msgBox_ok.ui.LblKonten_isi.setText("Register Sukses\nSilahkan Login.")
+            self.stacked.setCurrentIndex(3)
+            msgBox_ok.show()
+            msgBox_ok.rejected.connect(self.back_sec_questions)
+            msgBox_ok.ui.btnOk.clicked.connect(self.back_sec_questions_btnOk)
+            return
+        
+    
+"""        
 class formJawabSec_question(QWidget):
     def __init__(self):
         super().__init__()
@@ -293,13 +334,18 @@ if __name__ == "__main__":
     windowloading = MainApp(stacked)
     login = formLogin(stacked)
     register = formRegist(stacked)
-    
+    emptyform = empty_form(stacked)
+    buat_sec_question = formJawab_secQuestion(stacked)
     #===
     stacked.addWidget(windowloading) #0
     stacked.addWidget(login) #1
     stacked.addWidget(register) #2
+    stacked.addWidget(emptyform) #3
+    stacked.addWidget(buat_sec_question) #4
     #===
     
+    #Penghubungan data
+    register.dataSent.connect(buat_sec_question.data_sending)
     
     
     stacked.setFixedSize(stacked.currentWidget().size())

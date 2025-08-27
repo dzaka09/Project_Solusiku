@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="/Images">
     <file>Aset/Icon-At-home-removebg.png</file>
+    <file>Aset/img_daftarPekerja_Jasa_nobg.png</file>
     <file>Aset/img_home.png</file>
     <file>Aset/Icon-Solusiku-Splash.png</file>
     <file>Aset/profil_sy.jpg</file>
