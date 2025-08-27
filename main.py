@@ -18,8 +18,8 @@ from MessageBox_Anywhere.msgBox import Ui_msg_box
 from MessageBox_Anywhere.msgWith_btnOk import Ui_msgBox_ok
 from MessageBox_Anywhere.msgWith_btnYaTidak import Ui_msgBox_YaTdk 
 
-#import database db_solusiku
-#from service.db import cek_username
+
+from service.db import cek_username, insert_user
         
 #FORM KOSONG
 class empty_form(QWidget):
@@ -152,57 +152,72 @@ class formRegist(QWidget):
         password = self.ui.txt_password.text().strip()
         jenis_pertanyaan = self.ui.cmbBox_sec_qstion.currentText()
         cek_cmb_box = self.ui.cmbBox_sec_qstion.currentIndex()
-        
-        if len(password) == 0 and len(username) == 0:
+
+        # Buat instance messageBox baru tiap pemanggilan
+        msgBox = messageBox()
+
+        # Validasi input
+        if len(username) == 0:
             msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername dan Password anda masih kosong, silahkan isi username dan password anda!")
-            self.stacked.setCurrentIndex(3)
+            msgBox.ui.LblKonten_isi.setText("Mohon isi username!")
+            msgBox.exec_()
+            msgBox.rejected.connect(self.back_regist)
+            return
+
+        if len(password) == 0:
+            msgBox.ui.LblJenisMsg.setText("Peringatan!")
+            msgBox.ui.LblKonten_isi.setText("Mohon isi password!")
+            msgBox.exec_()
+            msgBox.rejected.connect(self.back_regist)
+            return
+
+        if len(username) < 3 or len(username) > 20:
+            msgBox.ui.LblJenisMsg.setText("Peringatan!")
+            msgBox.ui.LblKonten_isi.setText("Username harus 3-20 karakter!")
+            msgBox.exec_()
+            msgBox.rejected.connect(self.back_regist)
+            return
+
+        if len(password) < 8 or len(password) > 16:
+            msgBox.ui.LblJenisMsg.setText("Peringatan!")
+            msgBox.ui.LblKonten_isi.setText("Password harus 8-16 karakter!")
+            msgBox.exec_()
+            msgBox.rejected.connect(self.back_regist)
+            return
+
+        if cek_cmb_box == 0:
+            msgBox.ui.LblJenisMsg.setText("Peringatan!")
+            msgBox.ui.LblKonten_isi.setText("Silahkan pilih security question!")
+            msgBox.exec_()
+            msgBox.rejected.connect(self.back_regist)
+            return
+
+        # Cek username di database
+        if cek_username(username):
+            msgBox.ui.LblJenisMsg.setText("Peringatan!")
+            msgBox.ui.LblKonten_isi.setText("Username sudah digunakan!")
+            msgBox.exec_()
+            msgBox.rejected.connect(self.back_regist)
+            return
+
+        # Simpan user baru ke database
+        try:
+            insert_user(username, password, jenis_pertanyaan)
+        except Exception as e:
+            msgBox.ui.LblJenisMsg.setText("Error!")
+            msgBox.ui.LblKonten_isi.setText(f"Gagal menyimpan data:\n{str(e)}")
             msgBox.show()
             msgBox.rejected.connect(self.back_regist)
             return
-        elif len(password) == 0:
-            msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nPassword anda masih kosong, silahkan isi password anda!")
-            self.stacked.setCurrentIndex(3)
-            msgBox.show()
-            msgBox.rejected.connect(self.back_regist)
-            return
-        elif len(username) == 0:
-            msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername anda masih kosong, silahkan isi username anda!")
-            self.stacked.setCurrentIndex(3)
-            msgBox.show()
-            msgBox.rejected.connect(self.back_regist)
-            return
-        elif len(username) < 3 or len(username) > 20:
-            msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nUsername hanya dapat memuat 3 - 20 karakter.")
-            self.stacked.setCurrentIndex(3)
-            msgBox.show()
-            msgBox.rejected.connect(self.back_regist)
-            return
-        elif len(password) < 8 or len(password) > 16:
-            msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nPassword hanya dapat memuat 8 - 16 karakter.")
-            self.stacked.setCurrentIndex(3)
-            msgBox.show()
-            msgBox.rejected.connect(self.back_regist)
-            return
-        elif cek_cmb_box == 0:
-            msgBox.ui.LblJenisMsg.setText("Peringatan!")
-            msgBox.ui.LblKonten_isi.setText("Mohon Maaf!\nAnda belum memilih Security Question.")
-            self.stacked.setCurrentIndex(3)
-            msgBox.show()
-            msgBox.rejected.connect(self.back_regist)
-            return
-        else:
-            self.dataSent.emit(jenis_pertanyaan)
-            self.stacked.setCurrentWidget(buat_sec_question)
-            self.stacked.setWindowTitle("SECURITY QUESTION")
-            self.stacked.setWindowIcon(QIcon(":/LogoAndWindowsIcon/Aset/LogoIconSolusiku-final.png"))
-            self.stacked.setStyleSheet("Background-color: #ebebea;")
+
+        # Jika sukses, lanjut ke security question
+        self.dataSent.emit(jenis_pertanyaan)
+        self.stacked.setCurrentWidget(buat_sec_question)
+        self.stacked.setWindowTitle("SECURITY QUESTION")
+        self.stacked.setWindowIcon(QIcon(":/LogoAndWindowsIcon/Aset/LogoIconSolusiku-final.png"))
+        self.stacked.setStyleSheet("Background-color: #ebebea;")
                 
-        
+                
         
     def stay_regist(self):
         msgBox_YaTdk.close()
