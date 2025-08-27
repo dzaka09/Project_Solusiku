@@ -1,0 +1,43 @@
+<RCC>
+  <qresource prefix="/Images">
+    <file>Aset/Icon-At-home-removebg.png</file>
+    <file>Aset/img_home.png</file>
+    <file>Aset/Icon-Solusiku-Splash.png</file>
+    <file>Aset/profil_sy.jpg</file>
+    <file>Aset/shadowBlue_rotate.jpg</file>
+    <file>Aset/btn_back_noBG.png</file>
+    <file>Aset/Logo-removebg.png</file>
+    <file>Aset/Shadow_blue.jpg</file>
+    <file>Aset/app_name.png</file>
+  </qresource>
+  <qresource prefix="LogoAndWindowsIcon">
+    <file>Aset/LogoIconSolusiku-final.png</file>
+  </qresource>
+  <qresource prefix="/icon_menu_profil">
+    <file>Aset/profil_Asset/Icon_AlamatSAya.jpg</file>
+    <file>Aset/profil_Asset/Icon_editProfill.jpg</file>
+    <file>Aset/profil_Asset/Icon_Logout.jpg</file>
+    <file>Aset/profil_Asset/Icon_profilSaya.jpg</file>
+  </qresource>
+  <qresource prefix="/icon_psnJasa_dashboard">
+    <file>Aset/Dashboard_pesanJasa/cleaning_serv.jpg</file>
+    <file>Aset/Dashboard_pesanJasa/painting_serv.jpg</file>
+    <file>Aset/Dashboard_pesanJasa/ac_servis.jpg</file>
+    <file>Aset/Dashboard_pesanJasa/montir_serv.jpg</file>
+  </qresource>
+  <qresource prefix="/icon_Menu_dashboard">
+    <file>Aset/iconMenu_dashboard/Menu_.jpg</file>
+    <file>Aset/iconMenu_dashboard/icon-psn.jpg</file>
+    <file>Aset/iconMenu_dashboard/icon_psn_select.jpg</file>
+    <file>Aset/iconMenu_dashboard/daftar_servis.jpg</file>
+    <file>Aset/iconMenu_dashboard/daftar_servis_select.jpg</file>
+    <file>Aset/iconMenu_dashboard/dftr_pekerja_jasa.jpg</file>
+    <file>Aset/iconMenu_dashboard/dftr_pekerja_jasa_select.jpg</file>
+    <file>Aset/iconMenu_dashboard/riwayat_psn.jpg</file>
+    <file>Aset/iconMenu_dashboard/riwayat_psn_select.jpg</file>
+    <file>Aset/iconMenu_dashboard/Profile.jpg</file>
+    <file>Aset/iconMenu_dashboard/Profile_select.jpg</file>
+    <file>Aset/iconMenu_dashboard/Home.jpg</file>
+    <file>Aset/iconMenu_dashboard/Home_select.jpg</file>
+  </qresource>
+</RCC>
