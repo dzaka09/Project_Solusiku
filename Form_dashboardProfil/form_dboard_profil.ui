@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_profil_db</class>
+ <widget class="QWidget" name="Form_profil_db">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>892</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="Form_profil_Db" native="true">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>40</y>
+     <width>842</width>
+     <height>454</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ebebea;</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>164</y>
+      <width>842</width>
+      <height>290</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Resources_rc/resources.qrc">:/Images/Aset/Shadow_blue.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_keluarAkun">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>320</y>
+      <width>400</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#fd5d5d;
+border-radius: 11px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_editProfil1">
+    <property name="geometry">
+     <rect>
+      <x>268</x>
+      <y>163</y>
+      <width>29</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resources_rc/resources.qrc">
+      <normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_editProfill.jpg</normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_editProfill.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>29</width>
+      <height>29</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_Alamatsy0">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>240</y>
+      <width>138</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Alamat Saya</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_editProfil0">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>165</y>
+      <width>115</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Edit Profil</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_profilsaya0">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>81</y>
+      <width>119</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Profil Saya</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_Alamatsy">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>240</y>
+      <width>400</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#5ca3ff;
+border-radius: 11px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_Alamatsy1">
+    <property name="geometry">
+     <rect>
+      <x>268</x>
+      <y>243</y>
+      <width>29</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resources_rc/resources.qrc">
+      <normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_AlamatSAya.jpg</normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_AlamatSAya.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>29</width>
+      <height>29</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_profilsaya1">
+    <property name="geometry">
+     <rect>
+      <x>268</x>
+      <y>84</y>
+      <width>29</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resources_rc/resources.qrc">
+      <normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_profilSaya.jpg</normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_profilSaya.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>29</width>
+      <height>29</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_keluarAkun0">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>322</y>
+      <width>134</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Keluar Akun</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ediProfil">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>160</y>
+      <width>400</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#5ca3ff;
+border-radius: 11px;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_profilsaya">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>80</y>
+      <width>400</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#5ca3ff;
+border-radius: 11px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_keluarAkun1">
+    <property name="geometry">
+     <rect>
+      <x>268</x>
+      <y>323</y>
+      <width>28</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resources_rc/resources.qrc">
+      <normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_Logout.jpg</normaloff>:/icon_menu_profil/Aset/profil_Asset/Icon_Logout.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>btn_Alamatsy</zorder>
+   <zorder>btn_ediProfil</zorder>
+   <zorder>btn_profilsaya</zorder>
+   <zorder>btn_keluarAkun</zorder>
+   <zorder>btn_editProfil1</zorder>
+   <zorder>btn_Alamatsy0</zorder>
+   <zorder>btn_editProfil0</zorder>
+   <zorder>btn_profilsaya0</zorder>
+   <zorder>btn_Alamatsy1</zorder>
+   <zorder>btn_profilsaya1</zorder>
+   <zorder>btn_keluarAkun0</zorder>
+   <zorder>btn_keluarAkun1</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../Resources_rc/resources.qrc"/>
+  <include location="../Resources_rc/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

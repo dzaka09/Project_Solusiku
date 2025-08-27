@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>form_psnJasa</class>
+ <widget class="QWidget" name="form_psnJasa">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>892</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>6</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #ebebea;</string>
+  </property>
+  <widget class="QWidget" name="centralWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>20</y>
+     <width>842</width>
+     <height>454</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ebebea;</string>
+   </property>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>2</x>
+      <y>0</y>
+      <width>841</width>
+      <height>454</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid transparent;
+background-color: transparent;</string>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>820</width>
+       <height>1038</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>16</number>
+      </property>
+      <property name="leftMargin">
+       <number>90</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>90</number>
+      </property>
+      <property name="bottomMargin">
+       <number>30</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frame_montirServ">
+        <property name="minimumSize">
+         <size>
+          <width>638</width>
+          <height>235</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:white;
+border-radius: 27px;</string>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_12">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>50</y>
+           <width>360</width>
+           <height>126</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(166, 166, 166);</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Servis yang memberikan pelayanan terbaik soal masalah pada kendaraan motor dan mobil. Servis ini berisi orang-orang yang sudah berpengalaman menangani masalah terkait kendaraan. Kami menawarkan pengecekan secara rutin kesehatan dari kendaraan anda. Penyewa dibebaskan memilih jenis kendaraan yang ingin dilakukan pemeliharaan. Keselamatan dan kenyamanan anda dalam berkendara adalah prioritas utama kami.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_13">
+         <property name="geometry">
+          <rect>
+           <x>28</x>
+           <y>42</y>
+           <width>150</width>
+           <height>129</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #f8f7f4;
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_14">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>42</y>
+           <width>124</width>
+           <height>124</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../Resources_rc/resources.qrc">:/icon_psnJasa_dashboard/Aset/Dashboard_pesanJasa/montir_serv.jpg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnPilih_montir">
+         <property name="geometry">
+          <rect>
+           <x>36</x>
+           <y>184</y>
+           <width>135</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montaser Arabic</family>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #5ca3ff;
+border-radius: 11px;
+color: white;
+font-size: 17px;
+font-family: Montaser Arabic;</string>
+         </property>
+         <property name="text">
+          <string>Pilih</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_15">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>10</y>
+           <width>130</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>13</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>true</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;
+color: #023653;</string>
+         </property>
+         <property name="text">
+          <string>Montir Service</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_cleaningServ">
+        <property name="minimumSize">
+         <size>
+          <width>638</width>
+          <height>235</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:white;
+border-radius: 27px;</string>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_16">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>50</y>
+           <width>350</width>
+           <height>126</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(166, 166, 166);</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Servis yang memberikan pelayanan terbaik soal kebersihan. Sebagian besar seseorang menyatakan kebersihan merupakan kunci menuju hidup sehat dan terciptanya lingkungan yang nyaman untuk ditinggali. Kebersihan bisa dibilang setara dengan napas, kita dapat sadar betapa vitalnya ketika sudah mulai menghilang. Kami berusaha menciptakan suasana lingkungan hidup yang bersih dan sehat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_17">
+         <property name="geometry">
+          <rect>
+           <x>28</x>
+           <y>42</y>
+           <width>150</width>
+           <height>129</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #f8f7f4;
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_18">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>42</y>
+           <width>124</width>
+           <height>124</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../Resources_rc/resources.qrc">:/icon_psnJasa_dashboard/Aset/Dashboard_pesanJasa/cleaning_serv.jpg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnPilih_cleaning">
+         <property name="geometry">
+          <rect>
+           <x>36</x>
+           <y>184</y>
+           <width>135</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montaser Arabic</family>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #5ca3ff;
+border-radius: 11px;
+color: white;
+font-size: 17px;
+font-family: Montaser Arabic;</string>
+         </property>
+         <property name="text">
+          <string>Pilih</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_19">
+         <property name="geometry">
+          <rect>
+           <x>29</x>
+           <y>10</y>
+           <width>143</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>13</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>true</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;
+color: #023653;</string>
+         </property>
+         <property name="text">
+          <string>Cleaning Service</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_acServ">
+        <property name="minimumSize">
+         <size>
+          <width>638</width>
+          <height>235</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:white;
+border-radius: 27px;</string>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_8">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>50</y>
+           <width>350</width>
+           <height>126</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(166, 166, 166);</string>
+         </property>
+         <property name="text">
+          <string>Servis yang menangani segala masalah yang terjadi terkait AC (air conditioner). Selalu berusaha tidak pulang sebelum AC berjalan sesuai keinginan pelanggan. Kami juga menawarkan pengecekan komponen AC, serta pembersihan rutin filter AC. Kami telah memiliki tenaga kerja yang berkualitas dan berdedikasi tinggi untuk menangani berbagai permasalahan terkati AC. Bagi kami kenyamanan anda adalah prioritas utama kami.</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>28</x>
+           <y>42</y>
+           <width>150</width>
+           <height>129</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #f8f7f4;
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>42</y>
+           <width>129</width>
+           <height>129</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../Resources_rc/resources.qrc">:/icon_psnJasa_dashboard/Aset/Dashboard_pesanJasa/ac_servis.jpg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_11">
+         <property name="geometry">
+          <rect>
+           <x>55</x>
+           <y>10</y>
+           <width>97</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>13</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>true</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;
+color: #023653;</string>
+         </property>
+         <property name="text">
+          <string>AC Service</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnPilih_acServ">
+         <property name="geometry">
+          <rect>
+           <x>36</x>
+           <y>184</y>
+           <width>135</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montaser Arabic</family>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #5ca3ff;
+border-radius: 11px;
+color: white;
+font-size: 17px;
+font-family: Montaser Arabic;</string>
+         </property>
+         <property name="text">
+          <string>Pilih</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_paintServ">
+        <property name="minimumSize">
+         <size>
+          <width>638</width>
+          <height>235</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:white;
+border-radius: 27px;</string>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_20">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>49</y>
+           <width>350</width>
+           <height>140</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(166, 166, 166);</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kami menawarkan sebuah karya yang sangat cocok untuk anda yang menyukai karya seni lukis dan mengingkan hal baru dalam dunia seni. Kami mencoba semaksimal mungkin menciptakan unsur-unsur karya seni yang kemudian kami tuangkan ke dalam sebuah media lukis. Terakhir, jasa ini juga menyediakan layanan cat bangunan atau pun gedung. Namun, jika anda membutuhkan kami dalam pengecatan skala besar seperti gedung, sebaiknya langsung konsultasikan ke kantor cabang solusiku.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_21">
+         <property name="geometry">
+          <rect>
+           <x>28</x>
+           <y>42</y>
+           <width>150</width>
+           <height>129</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #f8f7f4;
+border-radius: 10px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>39</x>
+           <y>42</y>
+           <width>124</width>
+           <height>124</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../Resources_rc/resources.qrc">:/icon_psnJasa_dashboard/Aset/Dashboard_pesanJasa/painting_serv.jpg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnPilih_cleaningServ">
+         <property name="geometry">
+          <rect>
+           <x>36</x>
+           <y>184</y>
+           <width>135</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montaser Arabic</family>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #5ca3ff;
+border-radius: 11px;
+color: white;
+font-size: 17px;
+font-family: Montaser Arabic;</string>
+         </property>
+         <property name="text">
+          <string>Pilih</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_23">
+         <property name="geometry">
+          <rect>
+           <x>36</x>
+           <y>11</y>
+           <width>137</width>
+           <height>29</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>13</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>true</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:transparent;
+color: #023653;</string>
+         </property>
+         <property name="text">
+          <string>Painting Service</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>112</y>
+      <width>824</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Resources_rc/resources.qrc">:/Images/Aset/Shadow_blue.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>scrollArea</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../Resources_rc/resources.qrc"/>
+  <include location="../Resources_rc/resources.qrc"/>
+  <include location="../Resources_rc/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>form_editAlamat</class>
+ <widget class="QWidget" name="form_editAlamat">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>892</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EDIT ALAMAT</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Resources_rc/resources.qrc">
+    <normaloff>:/LogoAndWindowsIcon/Aset/LogoIconSolusiku-final.png</normaloff>:/LogoAndWindowsIcon/Aset/LogoIconSolusiku-final.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #ebebea;</string>
+  </property>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>186</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #a6a6a6;</string>
+   </property>
+   <property name="text">
+    <string>KECAMATAN</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSave">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>435</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 15px;
+background-color: #5ca2ff;
+color: #ffffff;</string>
+   </property>
+   <property name="text">
+    <string>Simpan Alamat</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>146</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #a6a6a6;</string>
+   </property>
+   <property name="text">
+    <string>KOTA</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>33</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid #ffffff;
+border-radius: 15px;
+background-color: #ffffff;
+color: #a6a6a6;</string>
+   </property>
+   <property name="text">
+    <string>EDIT ALAMAT</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>266</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #a6a6a6;</string>
+   </property>
+   <property name="text">
+    <string>DETAIL LAINNYA</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>106</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #a6a6a6;</string>
+   </property>
+   <property name="text">
+    <string>PROVINSI</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>226</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #a6a6a6;</string>
+   </property>
+   <property name="text">
+    <string>KELURAHAN</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txtDetaill">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>274</y>
+     <width>571</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border : 1px solid transparent;
+border-radius : 15px;
+background-color: white;
+color: #666666;</string>
+   </property>
+   <property name="placeholderText">
+    <string>Nama gang, jalan, blok, RT, RW, desa, atau lingkungan</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_back">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>25</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:transparent;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../Resources_rc/resources.qrc">
+     <normaloff>:/Images/Aset/btn_back_noBG.png</normaloff>:/Images/Aset/btn_back_noBG.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmb_prov">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>111</y>
+     <width>571</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border : 1px solid transparent;
+border-radius : 12px;
+color: #666666;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmb_kota">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>152</y>
+     <width>571</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border : 1px solid transparent;
+border-radius : 12px;
+color: #666666;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmb_kecamatan">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>191</y>
+     <width>571</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border : 1px solid transparent;
+border-radius : 12px;
+color: #666666;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmb_kelurahan">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>234</y>
+     <width>571</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border : 1px solid transparent;
+border-radius : 12px;
+color: #666666;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shadow_blue">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>75</y>
+     <width>892</width>
+     <height>425</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../Resources_rc/resources.qrc">:/Images/Aset/Shadow_blue.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>shadow_blue</zorder>
+  <zorder>label_3</zorder>
+  <zorder>btnSave</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lb</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label</zorder>
+  <zorder>label_4</zorder>
+  <zorder>txtDetaill</zorder>
+  <zorder>btn_back</zorder>
+  <zorder>cmb_prov</zorder>
+  <zorder>cmb_kota</zorder>
+  <zorder>cmb_kecamatan</zorder>
+  <zorder>cmb_kelurahan</zorder>
+ </widget>
+ <resources>
+  <include location="../Resources_rc/resources.qrc"/>
+  <include location="../Resources_rc/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
